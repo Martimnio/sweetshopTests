@@ -1,7 +1,6 @@
 import loc from "../locators/locators.js"
 const data = require(`../fixtures/basketData.json`)
 
-
 describe('Basket features', () => {
   beforeEach(()=>{
     cy.visit('https://sweetshop.netlify.app/')

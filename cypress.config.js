@@ -1,9 +1,25 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    reporterEnabled: 'mochawesome',
+    mochawesomeReporterOptions: {
+      reportDir: './cypress/reports',
+      overwrite: false,
+      html: true,
+      json: true,
+      screenshotsFolder: './cypress/screenshots', // Pasta de screenshots
+      embeddedScreenshots: true, // Inclui os screenshots no relatório
+    }
+  },
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // Adiciona screenshots automaticamente aos relatórios quando um teste falha
+      on('after:screenshot', (details) => {
+        console.log(`Screenshot taken: ${details.path}`);
+      });
+      return config;
     },
   },
 });

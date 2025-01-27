@@ -1,0 +1,205 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-27T22:21:39.008Z",
+    "end": "2025-01-27T22:22:19.811Z",
+    "duration": 40803,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aef39259-1b20-4a27-b4c5-338b1c59fdbd",
+      "title": "",
+      "fullFile": "cypress/e2e/login.cy.js",
+      "file": "cypress/e2e/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d4c94f06-090d-4579-a879-c02fb307a601",
+          "title": "Login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "After the login is completed, the user should be redirected to the \"Your account\" page",
+              "fullTitle": "Login page After the login is completed, the user should be redirected to the \"Your account\" page",
+              "timedOut": null,
+              "duration": 27198,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://sweetshop.netlify.app/');\ncy.login(data.email, data.password);\ncy.get('.display-3').should('contain', 'Your Account');",
+              "err": {},
+              "uuid": "7faea897-3068-47f2-87d5-4e8d11de07bb",
+              "parentUUID": "d4c94f06-090d-4579-a879-c02fb307a601",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "1d3b4248-15aa-4c1e-afb3-547996b5622a",
+              "title": "Ordering table",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "The table should be correctly ordenated when clicking on Order number",
+                  "fullTitle": "Login page Ordering table The table should be correctly ordenated when clicking on Order number",
+                  "timedOut": null,
+                  "duration": 4051,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('https://sweetshop.netlify.app/');\ncy.login(data.email, data.password);\ncy.get('.order-number').click();\ncy.get('tbody > :nth-child(1) > th').should(\"contain\", \"#1\");\ncy.get(':nth-child(2) > th').should(\"contain\", \"#2\");\ncy.get(':nth-child(3) > th').should(\"contain\", \"#3\");\ncy.get('.order-number').click();\ncy.get('tbody > :nth-child(1) > th').should(\"contain\", \"#3\");\ncy.get(':nth-child(2) > th').should(\"contain\", \"#2\");\ncy.get(':nth-child(3) > th').should(\"contain\", \"#1\");",
+                  "err": {},
+                  "uuid": "06a7ebd4-3afc-491f-8e05-9fc6d7ca92ed",
+                  "parentUUID": "1d3b4248-15aa-4c1e-afb3-547996b5622a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "The table should be correctly ordenated when clicking on Date Ordered",
+                  "fullTitle": "Login page Ordering table The table should be correctly ordenated when clicking on Date Ordered",
+                  "timedOut": null,
+                  "duration": 1836,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('https://sweetshop.netlify.app/');\ncy.login(data.email, data.password);\ncy.get('.order-date').click();\ncy.get('tbody > :nth-child(1) > :nth-child(2)').should(\"contain\", \"1st December 2019\");\ncy.get('tbody > :nth-child(2) > :nth-child(2)').should(\"contain\", \"11th July 2019\");\ncy.get(':nth-child(3) > :nth-child(2)').should('contain', \"11th Feb 2019\");\ncy.get('.order-date').click();\ncy.get('tbody > :nth-child(1) > :nth-child(2)').should('contain', \"11th Feb 2019\");\ncy.get('tbody > :nth-child(2) > :nth-child(2)').should(\"contain\", \"11th July 2019\");\ncy.get(':nth-child(3) > :nth-child(2)').should(\"contain\", \"1st December 2019\");",
+                  "err": {},
+                  "uuid": "307344bf-82b6-43d9-9881-38d07bbd544f",
+                  "parentUUID": "1d3b4248-15aa-4c1e-afb3-547996b5622a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "The table should be correctly ordenated when clicking on Order description",
+                  "fullTitle": "Login page Ordering table The table should be correctly ordenated when clicking on Order description",
+                  "timedOut": null,
+                  "duration": 1414,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('https://sweetshop.netlify.app/');\ncy.login(data.email, data.password);\ncy.get('.order-description').click();\ncy.get('tbody > :nth-child(1) > :nth-child(3)').should('contain', \"Sherbert Straws x 1\");\ncy.get('tbody > :nth-child(2) > :nth-child(3)').should('contain', 'Swansea Mixture x 1');\ncy.get(':nth-child(3) > :nth-child(3)').should('contain', \"Chocolate Cups x 5\");\ncy.get(':nth-child(3) > :nth-child(3)').should('contain', \"Swansea Mixture x 2\");",
+                  "err": {},
+                  "uuid": "5ee255f1-b245-404f-ad8b-41a5679f7741",
+                  "parentUUID": "1d3b4248-15aa-4c1e-afb3-547996b5622a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "The table should be correctly ordenated when clicking on Order Total",
+                  "fullTitle": "Login page Ordering table The table should be correctly ordenated when clicking on Order Total",
+                  "timedOut": null,
+                  "duration": 1547,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('https://sweetshop.netlify.app/');\ncy.login(data.email, data.password);\ncy.get('.order-total').click();\ncy.get('tbody > :nth-child(1) > :nth-child(4)').should('contain', \"8.00\");\ncy.get('tbody > :nth-child(2) > :nth-child(4)').should('contain', \"1.50\");\ncy.get(':nth-child(3) > :nth-child(4)').should('contain', \"0.75\");\ncy.get('.order-total').click();\ncy.get('tbody > :nth-child(1) > :nth-child(4)').should('contain', \"0.75\");\ncy.get('tbody > :nth-child(2) > :nth-child(4)').should('contain', \"1.50\");\ncy.get(':nth-child(3) > :nth-child(4)').should('contain', \"8.00\");",
+                  "err": {},
+                  "uuid": "4a6f141b-3275-4ceb-96be-fc9ea0278695",
+                  "parentUUID": "1d3b4248-15aa-4c1e-afb3-547996b5622a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "06a7ebd4-3afc-491f-8e05-9fc6d7ca92ed",
+                "307344bf-82b6-43d9-9881-38d07bbd544f",
+                "5ee255f1-b245-404f-ad8b-41a5679f7741",
+                "4a6f141b-3275-4ceb-96be-fc9ea0278695"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8848,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "7faea897-3068-47f2-87d5-4e8d11de07bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "./cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "screenshotsFolder": "./cypress/screenshots",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
