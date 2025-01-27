@@ -46,7 +46,7 @@ describe('Login page', () => {
       cy.get(':nth-child(3) > :nth-child(3)').should('contain',"Swansea Mixture x 2")
     })
 
-    it.only('The table should be correctly ordenated when clicking on Order Total', () => {
+    it('The table should be correctly ordenated when clicking on Order Total', () => {
       cy.visit('https://sweetshop.netlify.app/')
       cy.login(data.email, data.password)
       cy.get('.order-total').click()
