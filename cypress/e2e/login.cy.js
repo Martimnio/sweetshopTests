@@ -1,6 +1,4 @@
-import loc from "../locators/locators.js"
 const data = require(`../fixtures/loginData.json`)
-
 
 describe('Login page', () => {
   it('After the login is completed, the user should be redirected to the "Your account" page', () => {
