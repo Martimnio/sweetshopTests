@@ -11,7 +11,7 @@ describe('Login page', () => {
     it('The table should be correctly ordenated when clicking on Order number', () => {
       cy.visit('https://sweetshop.netlify.app/')
       cy.login(data.email, data.password)
-      cy.get('.order-number').click()
+      cy.get('.order-numer').click()
       cy.get('tbody > :nth-child(1) > th').should("contain","#1")
       cy.get(':nth-child(2) > th').should("contain","#2")
       cy.get(':nth-child(3) > th').should("contain","#3")
