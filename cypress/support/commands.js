@@ -19,3 +19,8 @@ Cypress.Commands.add('login', (email, password) => {
   cy.get('#exampleInputPassword').type(data.password)
   cy.contains('button','Login').click()
 })
+
+Cypress.Commands.add('addItemToBasket', (email, password) => {
+  cy.get(':nth-child(1) > .card > .card-footer > .btn').click()
+  cy.get('.badge').should("contain",1)
+})
