@@ -23,7 +23,6 @@ describe('Basket features', () => {
   })
 
   it('A sweet should be purchased successfuly', () => {
-    
     cy.addItemToBasket()
     cy.get('.badge').should("contain",1)
     cy.get(loc.basket_button_nav).click()
