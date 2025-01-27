@@ -2,7 +2,7 @@ import loc from "../locators/locators.js"
 const data = require(`../fixtures/loginData.json`)
 
 
-describe('Login page', () => {
+describe('Basket features', () => {
   it('After the login is completed, the user should be redirected to the "Your account" page', () => {
     cy.visit('https://sweetshop.netlify.app/')
     cy.login(data.email, data.password)

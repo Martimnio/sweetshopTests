@@ -1,25 +1,21 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import loc from "../locators/locators.js"
+const data = require(`../fixtures/loginData.json`)
+
+/**
+ * Custom Cypress command to log in to the application.
+ *
+ * @function login
+ * @param {string} email - The email address of the user.
+ * @param {string} password - The password of the user.
+ *
+ * @example
+ * // Using the custom command in a test
+ * cy.login('user@example.com', 'password123');
+ *
+ */
+Cypress.Commands.add('login', (email, password) => {
+  cy.get(loc.login_button_nav).click()
+  cy.get('#exampleInputEmail').type(data.email)
+  cy.get('#exampleInputPassword').type(data.password)
+  cy.contains('button','Login').click()
+})
